@@ -21,3 +21,5 @@ Mô tả từng module:
 - Distribute item
 - Motor
 - Screen
+  + Chức năng: hiển thị vật phẩm và số lượng tương ứng ra màn hình
+  + Phần cứng sử dụ: vi điều khiển và màn hình LCD
