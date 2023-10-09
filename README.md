@@ -31,7 +31,14 @@ gần như không thể phát hiện được.
 	Dù lọc được ánh sáng mặt trời nhưng nếu để tiếp xúc trực tiếp với ánh sáng mặt trời mạnh sẽ gây
 mất tín hiệu hồng ngoại.
 - Distribute item
+  + Input: Nhận đầu vào là các sản phầm dùng tay đặt vào băng chuyền
+  + Output: Di chuyển sản phẩm đến nơi cần phân loại
+    Phần cứng sử dụng: Mô hình băng truyền mini 6*40cm
+    Ưu điểm của phần cứng: Nhỏ gọn dễ dàng sử dụng cho mô hình nhỏ, dễ dàng sửa chữa và bảo quản.
 - Motor
+  +Input: Dòng điện 5V
+  +Output: Làm băng truyền chuyển động
+  	Phần cứng sử dụng: 
 - Screen
   + Chức năng: hiển thị vật phẩm và số lượng tương ứng ra màn hình
   + Phần cứng sử dụ: vi điều khiển và màn hình LCD
