@@ -1,7 +1,6 @@
 import cv2 as cv
 import numpy as np
 import math
-from scipy.spatial import ConvexHull
 import serial
 
 point = [] 
@@ -195,20 +194,6 @@ def distance_from_point_to_line(point: tuple, expression_line: tuple) -> float:
     return tu/mau
 
 
-def sort_points_by_convex_hull(points):
-    # Tạo đối tượng ConvexHull từ các điểm
-    hull = ConvexHull(points)
-    
-    # Lấy các chỉ số của các điểm trên convex hull
-    indices = hull.vertices
-    
-    # Sắp xếp các điểm theo thứ tự của convex hull
-    sorted_points = [points[i] for i in sorted(indices)]
-    
-    return sorted_points
-
-             
-        
         
         
 #check point1 is middle of point2 and point3
@@ -306,8 +291,7 @@ def getContours(img, img_contour):
             else: 
                 arr = convert_approx_to_list(approx)
                 # print(f"List of points: {arr}")
-                sorted_point = sort_points_by_convex_hull(arr)
-                shape = filter_for_remove_vectecx(sorted_point)
+                shape = filter_for_remove_vectecx(arr)
             print(f"Number of new vertexc is {shape}")
             #detemine center most near
             denta: int = 9999
@@ -385,12 +369,12 @@ def checkThrough():
             elif items[i].shape == 4:
                 if ((items[i].center[1] <= point_vuong + 15) & (items[i].center[1] >= point_vuong - 15)):
                     print("Day vuong")
-                    data_serial.write("21\r".encode())
+                    # data_serial.write("21\r".encode())
                     items[i].show()    
             elif items[i].shape == 5:
                 if ((items[i].center[1] <= point_tron + 15) & (items[i].center[1] >= point_tron - 15)):
                     print("Day tron")
-                    data_serial.write("11\r".encode())
+                    # data_serial.write("11\r".encode())
                     items[i].show()    
         else:#item hasn't detected
             if ((items[i].center[1] <= point_detec + 15) & (items[i].center[1] >= point_detec - 15)):
@@ -400,7 +384,7 @@ def checkThrough():
         
             
 if __name__ == "__main__":
-    data_serial = serial.Serial("COM4", 9600)
+    # data_serial = serial.Serial("COM4", 9600)
 
 
     cv.namedWindow("adjust_bar")
