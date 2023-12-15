@@ -1,7 +1,7 @@
 import serial
 import time
 
-data_serial = serial.Serial("COM4", 9600)
+data_serial = serial.Serial("/dev/ttyUSB3", 9600)
 
 time.sleep(1)
 
